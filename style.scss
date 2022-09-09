@@ -1,9 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;600&display=swap"); // headings - poppins: semibold, 100
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+// Global variables
+:root {
+  // Color
+  --color-primary: #262626;
+  --color-secondary: #ff7300;
+  --color-white: white;
+
+  // Font
+  --ff-heading: "Poppins", sans-serif;
+  --ff-main: "sans-serif";
+
+  --normal-text-size: clamp(0.75rem, 1rem, 1.5rem);
+
+  // Margins and padding
+  --phone-inline-margin: 0.5rem;
+}
+
 body {
-//   background-color: pink;
+  background-color: pink;
+}
+
+// SECTION nav for mobile
+
+.nav--hidden {
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+.nav--bar {
+  background-color: var(--color-primary);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  .logo {
+    img {
+      height: 7rem;
+    }
+  }
+}
+.nav--container__mobile {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  transition: all 0.5s ease-in-out;
+  background-color: white;
+  height: 100vh;
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 12vh auto;
+
+    li {
+      display: block;
+      font-family: var(--ff-heading);
+      padding-block: 2.3rem;
+      width: 8rem;
+      text-align: center;
+      border-bottom: 1px solid black;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+  transition: opacity 0.5s;
+  z-index: 1;
+}
+
+// Burger menu
+
+.menu-btn {
+  margin-right: 2rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  z-index: 4;
+  /* border: 3px solid #fff; */
+}
+.menu-btn__burger {
+  width: 1.8rem;
+  height: 0.2rem;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: "";
+  position: absolute;
+  width: 1.8rem;
+  height: 0.2rem;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+.menu-btn__burger::before {
+  transform: translateY(-9px);
+}
+.menu-btn__burger::after {
+  transform: translateY(9px);
+}
+/* ANIMATION */
+.menu-btn.open .menu-btn__burger {
+  transform: translateX(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+.menu-btn.open .menu-btn__burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+  background: black;
+}
+.menu-btn.open .menu-btn__burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+  background: black;
+}
+
+// SECTION hero and title section
+
+.hero--container {
+  width: 100vw;
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  img {
+    width: 100%;
+    filter: grayscale(50%);
+  }
+  h1,
+  p,
+  .line {
+    position: absolute;
+    top: 11rem;
+    color: white;
+    font-family: var(--ff-heading);
+  }
+  h1 {
+    white-space: nowrap;
+    font-size: 2rem;
+  }
+  p {
+    display: block;
+    margin-top: 3.9rem;
+    font-weight: 200;
+  }
+  .line {
+    border-left: 3px solid white;
+    display: block;
+    height: 100px;
+    margin: 0 auto;
+    width: 1px;
+    margin-top: 10rem;
+  }
+}
+
+// SECTION info block one
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  width: 80vw;
 }
