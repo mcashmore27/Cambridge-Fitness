@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;600&display=swap"); // headings - poppins: semibold, 100
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@100;200;600&display=swap"); // headings - poppins: semibold, 100 ... open sans: 400;
 
 * {
   box-sizing: border-box;
@@ -9,13 +9,14 @@
 // Global variables
 :root {
   // Color
-  --color-primary: #262626;
-  --color-secondary: #ff7300;
+  --color-primary: #262626; // var(--color-primary)
+  --color-secondary: #ff7300; // var(--color-secondary)
   --color-white: white;
 
   // Font
   --ff-heading: "Poppins", sans-serif;
-  --ff-main: "sans-serif";
+  --ff-main: "Open Sans";
+  --high-lines: 2rem;
 
   --normal-text-size: clamp(0.75rem, 1rem, 1.5rem);
 
@@ -25,6 +26,24 @@
 
 body {
   background-color: pink;
+}
+
+// Buttons
+
+.btn {
+  font-size: 0.9rem;
+  white-space: nowrap;
+  width: 10rem;
+  border: none;
+  color: white;
+  padding: 0.8rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 2rem auto 1rem;
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
 
 // SECTION nav for mobile
@@ -117,7 +136,7 @@ body {
 .menu-btn__burger::after {
   transform: translateY(9px);
 }
-/* ANIMATION */
+/* ANIMATION for the burger menu */
 .menu-btn.open .menu-btn__burger {
   transform: translateX(-50px);
   background: transparent;
@@ -173,10 +192,76 @@ body {
 
 // SECTION info block one
 
-section {
+.sweat {
   display: flex;
   flex-direction: column;
   align-content: center;
   text-align: center;
   width: 80vw;
+  margin: 2rem auto;
+  font-family: "open sans";
+  line-height: var(--high-lines);
+  .btn--start__sweating {
+    background-color: white;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+  }
+  .btn--start__sweating:hover {
+    background-color: var(--color-primary);
+    color: white;
+  }
+}
+
+// SECTION info block two
+
+.feature--block {
+  position: absolute;
+  background-color: var(--color-secondary);
+  height: 70vw;
+  width: 100vw;
+  z-index: -2;
+}
+
+.results {
+  position: relative;
+  img {
+    position: relative;
+    margin: 2rem 0rem 0rem 2.5rem;
+    width: 80vw;
+    z-index: 4;
+  }
+  .info--container {
+    margin-top: -4.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    background-color: var(--color-primary);
+    .results--heading {
+      margin-top: 7rem;
+      font-family: var(--ff-heading);
+      width: 80vw;
+      font-size: 2rem;
+      text-align: center;
+      color: var(--color-secondary);
+    }
+    .results--info {
+      width: 80vw;
+      margin: 2rem auto 1rem;
+      font-family: "open sans";
+      color: white;
+      text-align: center;
+      line-height: var(--high-lines);
+    }
+    .btn--results {
+      margin: 2rem auto 2rem;
+      border: 2px solid white;
+      background-color: var(--color-primary);
+      color: white;
+    }
+    .btn--results:hover {
+      background-color: white;
+      color: var(--color-primary);
+    }
+  }
 }

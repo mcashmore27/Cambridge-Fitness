@@ -13,6 +13,8 @@ const btnRight = document.querySelector(".fa-angle-right");
 const navMobile = document.querySelector(".nav--mobile");
 const overlay = document.querySelector(".blured--background");
 const allSections = document.querySelectorAll(".section");
+const sweatSection = document.querySelectorAll(".our--vision")
+console.log(sweatSection.offsetHeight);
 
 // SECTION Global variables
 let menuOpen = false;
