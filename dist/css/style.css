@@ -16,16 +16,12 @@
   --phone-inline-margin: 0.5rem;
 }
 
-body {
-  background-color: pink;
-}
-
 .btn {
   font-size: 0.9rem;
   white-space: nowrap;
   width: 10rem;
   border: none;
-  color: white;
+  color: var(--color-white);
   padding: 0.8rem;
   text-align: center;
   text-decoration: none;
@@ -34,6 +30,13 @@ body {
   margin: 2rem auto 1rem;
   transition-duration: 0.4s;
   cursor: pointer;
+}
+
+.section--heading {
+  text-align: center;
+  margin-top: 2rem;
+  font-family: var(--ff-heading);
+  font-size: 2rem;
 }
 
 .nav--hidden {
@@ -264,6 +267,235 @@ body {
 }
 
 .results .info--container .btn--results:hover {
+  background-color: white;
+  color: var(--color-primary);
+}
+
+.slider--facility .slider {
+  width: 100%;
+  height: clamp(10vh, 30vh, 80vh);
+  margin: 0 auto;
+  position: relative;
+  top: 2rem;
+  /* IN THE END */
+  overflow: hidden;
+}
+
+.slider--facility .slide {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* THIS creates the animation! */
+  transition: transform 1s;
+}
+
+.slider--facility .slide > img {
+  /* Only for images that have different size than slide */
+  max-width: 95%;
+  min-height: 255px;
+  max-height: 50vh;
+  object-fit: fit;
+}
+
+.slider--facility .dots {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.slider--facility .dots__dot {
+  border: none;
+  background-color: #b9b9b9;
+  opacity: 0.7;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  margin-right: 1.75rem;
+  cursor: pointer;
+  transition: all 0.5s;
+  /* Only necessary when overlying images */
+  box-shadow: 0 0.6rem 1.5rem rgba(0, 0, 0, 0.7);
+}
+
+.slider--facility .dots__dot:last-child {
+  margin: 0;
+}
+
+.slider--facility .dots__dot--active {
+  background-color: #fff;
+  opacity: 1;
+}
+
+.slider--facility .btn--container {
+  display: flex;
+  position: relative;
+  margin-inline: 0rem;
+  justify-content: space-between;
+  align-items: center;
+  top: calc( 50% - (2rem / 2));
+}
+
+.slider--facility .btn--container .slider__btn {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  border: none;
+  background: rgba(255, 255, 255, 0.4);
+  font-family: inherit;
+  color: var(--color-primary);
+  height: 80rem;
+  width: 3rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.slider--facility .btn--container .slider__btn--left {
+  left: 6%;
+  transform: translate(-50%, -50%);
+}
+
+.slider--facility .btn--container .slider__btn--right {
+  right: 6%;
+  transform: translate(50%, -50%);
+}
+
+.methods {
+  margin-top: 6rem;
+  text-align: center;
+}
+
+.methods .feature--block {
+  display: none;
+}
+
+.methods img {
+  max-width: 90%;
+  overflow: hidden;
+  margin-top: 2rem;
+  height: 20rem;
+}
+
+.methods h2 {
+  margin-block: 2rem 0.5rem;
+  font-family: var(--ff-heading);
+}
+
+.methods p {
+  max-width: 80%;
+  margin: 0 auto;
+  font-family: var(--ff-main);
+  line-height: 1.7rem;
+}
+
+.methods .btn--our__classes {
+  background-color: white;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  margin-top: 5rem;
+}
+
+.methods .btn--our__classes:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.background--img {
+  background-image: url("./images/yoga.jpeg");
+  background-size: cover;
+  background-position: center;
+  width: 200px;
+  height: 200px;
+  padding: 2rem;
+}
+
+.contact--section {
+  background-color: var(--color-primary);
+  width: 95%;
+  margin: 0 0 0 5%;
+  text-align: center;
+}
+
+.contact--section .section--heading {
+  color: var(--color-secondary);
+  padding: 2rem;
+}
+
+.contact--section .form--container {
+  display: grid;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.contact--section .form--container input {
+  width: 100%;
+  font-family: var(--ff-main);
+  margin-top: 2.2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-bottom: 1px solid var(--color-white);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.contact--section .form--container .message {
+  font-family: var(--ff-main);
+  background-color: var(--color-primary);
+  height: 10rem;
+  width: 100%;
+  font-size: 1.1rem;
+  border: none;
+  border-bottom: 1px solid var(--color-white);
+  margin-top: 2.2rem;
+  color: var(--color-white);
+}
+
+.contact--section .form--container ::placeholder {
+  color: var(--color-white);
+  opacity: 1;
+  /* Firefox */
+}
+
+.contact--section .form--container :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--color-white);
+}
+
+.contact--section .form--container ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--color-white);
+}
+
+.contact--section .form--container textarea::-webkit-input-placeholder {
+  color: var(--color-white);
+}
+
+.contact--section .form--container textarea:-moz-placeholder {
+  /* Firefox 18- */
+  color: var(--color-white);
+}
+
+.contact--section .form--container textarea::-moz-placeholder {
+  /* Firefox 19+ */
+  color: var(--color-white);
+}
+
+.contact--section .form--container textarea:-ms-input-placeholder {
+  color: var(--color-white);
+}
+
+.contact--section .form--container .btn--submit {
+  margin-block: 3rem 5rem;
+  border: 2px solid white;
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.contact--section .form--container .btn--submit:hover {
   background-color: white;
   color: var(--color-primary);
 }
