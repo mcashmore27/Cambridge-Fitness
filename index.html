@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/28a818fe8c.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="/dist/css/style.css" />
     <script defer src="/script.js"></script>
     <!-- reference website for design  https://www.wix.com/website-template/view/html/2687?originUrl=https%3A%2F%2Fwww.wix.com%2Fwebsite%2Ftemplates%3Fcriteria%3Dgym&tpClick=view_button&esi=ac576631-3a75-4e4e-a688-4bab786324f5#-->
@@ -53,7 +55,9 @@
       <div class="hero--container">
         <div class="img--wrapper">
           <img class="desk--top__imgs" src="/images/pexels-alesia-kozik-7289247.jpg" alt="">
-          <img class='paralax' src="/images/hero-girl-img.jpg" alt="" />
+          <div class="back-ground__img-wrapper">
+            <img class='paralax' src="/images/hero-girl-img.jpg" alt="" />
+          </div>
           <img class="desk--top__imgs" src="/images/pexels-victor-freitas-2261484 (1).jpg" alt="">
         </div>
         <h1>Cambridge Fitness</h1>
@@ -95,7 +99,7 @@
       </section>
   
       <!-- SECTION  slider section of facility-->
-      <section id='slider--facility' class="slider--facility section">
+      <section id='slider--facility' class="slider--facility section reset-this">
         <h1 class="facility--heading section--heading">
           Workout Facility
         </h1>
@@ -116,38 +120,46 @@
   
     <!-- SECTION  our methods section-->
   
-    <section class="methods " id="methods">
+    <section class="methods section" id="methods">
       <div class="feature--block"></div>
       <h1 class="methods--heading section--heading section">Our Methods</h1>
       <div class="methods--grid__container">
   
-  <div class="grid--section section">
+  <div class="grid--section ">
     <img class="" src="/images/manweights.jpeg" alt="">
-    <h2 class="sub--heading ">Body Shape
-    </h2>
-    <p class="" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ut, explicabo temporibus accusamus hic culpa.</p>
+    <div class="">
+      <h2 class="sub--heading ">Body Shape
+      </h2>
+      <p class="" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod ut, explicabo temporibus accusamus hic culpa.</p>
+    </div>
   </div>
 
 
-  <div class="grid--section">
+  <div class="grid--section ">
     <img class="desktop--img img2" src="/images/bodybalance.jpeg" alt="">
-    <h2 class="sub--heading section">Extreme
-    </h2>
-    <p class="section" >Impedit sed consequuntur voluptatem, provident aliquid in. Est quaerat consequuntur sed obcaecati cumque inventore tenetur.</p>
+    <div class="">
+      <h2 class="sub--heading ">Extreme
+      </h2>
+      <p class="" >Impedit sed consequuntur voluptatem, provident aliquid in. Est quaerat consequuntur sed obcaecati cumque inventore tenetur.</p>
+    </div>
   </div>
 
-  <div class="grid--section">
-    <img class="desktop--img img3" src="/images/bodycombat.jpeg" alt="">
-    <h2 class="sub--heading section">Burn
-    </h2>
-    <p class="section" >Facilis, atque natus, quod aliquam minus iusto quasi, porro eaque necessitatibus distinctio nobis autem saepe.</p>
+  <div class="grid--section ">
+    <img class="desktop--img img3 " src="/images/bodycombat.jpeg" alt="">
+    <div class="">
+      <h2 class="sub--heading ">Burn
+      </h2>
+      <p class="" >Facilis, atque natus, quod aliquam minus iusto quasi, porro eaque necessitatibus distinctio nobis autem saepe.</p>
+    </div>
   </div>
 
-  <div class="grid--section">
-    <img class="desktop--img img4" src="/images/RPM.jpeg" alt="">
-    <h2 class="sub--heading section">Hit
-    </h2>
-    <p class="section" >Eum eaque saepe placeat fugit ipsum a eius earum, blanditiis obcaecati ut explicabo! Dolorem, nulla.</p>
+  <div class="grid--section ">
+    <img class="desktop--img img4 " src="/images/RPM.jpeg" alt="">
+    <div class="">
+      <h2 class="sub--heading ">Hit
+      </h2>
+      <p class="" >Eum eaque saepe placeat fugit ipsum a eius earum, blanditiis obcaecati ut explicabo! Dolorem, nulla.</p>
+    </div>
   </div>
   
 </div>
@@ -159,6 +171,7 @@
   <!-- TODO set up the thankyou page once I know the domain name -->
   
   <div class="contact--section__wrapper" id="contact--us">
+    <h1 class=" section--heading">Hit Us Up Anytime</h1>
     <div class="background--img section" ></div>
     <section class="contact--section section">
       <h1 class="section--heading">Contact Us</h1>
@@ -176,8 +189,27 @@
     </section>
   </div>
   
-  <!-- SECTION buisiness details -->
+  <!-- SECTION buisiness details footer-->
   <section class="gym--details">
+    <div class="logo details">
+      <img src="/images/Screenshot 2022-09-06 at 05.50.44.png" alt="">
+      <div class="socials--wrapper">
+        <a href="https://www.facebook.com/CambridgeFitness"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/cambridgefitness.nz/"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="nav--details details">
+      <h3>Menu</h3>
+      <ul class="detail--nav__links">
+        <li><a href="#slider--facility" class="Facility  nav__link">Facility</a></li>
+        <li><a href="#methods" class="Methods nav__link">Methods</a></li>
+        <li><a class="Challenges nav__link" href="#">Challenges</a></li>
+        <li>
+          <a class="Memeberships  nav__link" href="#">Memeberships</a>
+        </li>
+        <li><a class="Contact  nav__link" href="#contact--us">Contact</a></li>
+      </ul>
+    </div>
     <div class="contact--details details">
       <h3>Contact Us</h3>
       <p>20 Pope Terrace, Leamington,<br>Cambridge 3432<br>admin@cambridgefitness.co.nz<br>07 827 7889
@@ -187,7 +219,7 @@
       <h3>Opening Hours</h3>
       <p>Monday - Friday 6am - 6:30pm<br>Saturday and Sunday: 8am - 12pm<br>24 Hour Access</p>
     </div>
-    <img src="" alt="">
+
   </section>
   
   <!-- SECTION  copy right section -->

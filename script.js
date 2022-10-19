@@ -74,6 +74,23 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
   }
 });
 
+// for the nav links down the bottom on the desktop
+
+document.querySelector('.detail--nav__links').addEventListener('click', function (e) {
+  e.preventDefault();
+
+  // Matching strategy
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+    console.log(id);
+
+    document.querySelector(id).scrollIntoView({ top: 150,behavior: 'smooth' });
+  }
+  if(window.innerWidth < 600){
+  exitEnterMobileNav();
+  }
+});
+
 // Initialization function (what needs to be set when the page is loaded)
 const init = function () {};
 init();
@@ -83,7 +100,7 @@ init();
 menuBtn.addEventListener("click", exitEnterMobileNav);
 
 // SECTION slider
-
+if (window.innerWidth < 600) {
 const slider = function () {
   // Selectors
   const slides = document.querySelectorAll(".slide");
@@ -190,7 +207,7 @@ const slider = function () {
   });
 };
 
-if (window.innerWidth < 600) {
+
   slider();
 }
 
@@ -200,34 +217,34 @@ if (window.innerWidth < 600) {
 // TODO uncomment all of this section below so that the sections can reveal themselves on scroll. 
 
 
-// Selecting all the sections
-// const allSections = document.querySelectorAll('.section');
-// This is the call back function to the intersection observer. This holds the logic of what is happening and is usually the hardest to write.
-const revealSection = function (entries, observer) {
-  // This is to get all the values out of the entries object
-  const [entry] = entries;
-  // A good idea to is to look at the entries object so that you can inspect what values / properties you will need to work with.
-  console.log(entry);
+// // Selecting all the sections
+// // const allSections = document.querySelectorAll('.section');
+// // This is the call back function to the intersection observer. This holds the logic of what is happening and is usually the hardest to write.
+// const revealSection = function (entries, observer) {
+//   // This is to get all the values out of the entries object
+//   const [entry] = entries;
+//   // A good idea to is to look at the entries object so that you can inspect what values / properties you will need to work with.
+//   console.log(entry);
 
-  // This is another guard clause which stops the first initial section observer triggering the first animation
-  if (!entry.isIntersecting) return;
+//   // This is another guard clause which stops the first initial section observer triggering the first animation
+//   if (!entry.isIntersecting) return;
 
-  // Removes the class that you want removed.
-  entry.target.classList.remove('section--hidden');
-  // Because the target element has done its thing we no longer need to observe the target element as that would be bad for performance, so you can remove the observer by writing 'unobserve', as follows
-  observer.unobserve(entry.target);
-};
+//   // Removes the class that you want removed.
+//   entry.target.classList.remove('section--hidden');
+//   // Because the target element has done its thing we no longer need to observe the target element as that would be bad for performance, so you can remove the observer by writing 'unobserve', as follows
+//   observer.unobserve(entry.target);
+// };
 
-// This is the intersection observer itself. It has the options object straight in there because it is an easy one.
-const sectionObserver = new IntersectionObserver(revealSection, {
-  root: null,
-  threshold: 0.15,
-});
+// // This is the intersection observer itself. It has the options object straight in there because it is an easy one.
+// const sectionObserver = new IntersectionObserver(revealSection, {
+//   root: null,
+//   threshold: 0.15,
+// });
 
-// This is a loop that allows the section observer to be attached to each of the sections allowing it to be used for each section and not have to have one for each section.
-allSections.forEach(section => {
-  sectionObserver.observe(section);
-  section.classList.add('section--hidden');
-});
+// // This is a loop that allows the section observer to be attached to each of the sections allowing it to be used for each section and not have to have one for each section.
+// allSections.forEach(section => {
+//   sectionObserver.observe(section);
+//   section.classList.add('section--hidden');
+// });
 
 /////////////////////////////////////////////////////////
